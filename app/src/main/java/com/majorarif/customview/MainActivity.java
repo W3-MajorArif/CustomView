@@ -1,5 +1,8 @@
 package com.majorarif.customview;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,29 +18,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final ValueSelector valueSelector = (ValueSelector) findViewById(R.id.valueSelector);
-        valueSelector.setMinValue(0);
-        valueSelector.setMaxValue(100);
-
-        final ValueBar valueBar = (ValueBar) findViewById(R.id.valueBar);
-        valueBar.setMaxValue(100);
-        valueBar.setAnimated(true);
-        valueBar.setAnimationDuration(4000l);
-
-        Button updateButton = (Button) findViewById(R.id.updateButton);
+        Button updateButton = (Button) findViewById(R.id.barViewBtn);
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int value = valueSelector.getValue();
-                valueBar.setValue(value);
+                Intent intent = new Intent (MainActivity.this, BarViewActivity.class);
+                startActivity(intent);
+            }
+        });
 
-                //code to use Object Animation instead of the built-in ValueBar animation
-                //if you use this, be sure the call valueBar.setAnimated(false);
-                /*
-                ObjectAnimator anim = ObjectAnimator.ofInt(valueBar, "value", valueBar.getValue(), value);
-                anim.setDuration(1000);
-                anim.start();
-                */
+        Button emotionButton = (Button) findViewById(R.id.emotionViewBtn);
+        emotionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent (MainActivity.this, EmotionViewActivity.class);
+                startActivity(intent);
             }
         });
     }

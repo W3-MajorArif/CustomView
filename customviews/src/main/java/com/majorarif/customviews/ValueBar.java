@@ -222,7 +222,7 @@ public class ValueBar extends View {
         maxValuePaint.getTextBounds(maxValueString, 0, maxValueString.length(), maxValueRect);
         float barLength = getWidth() - getPaddingRight() - getPaddingLeft() - circleRadius - maxValueRect.width() - spaceAfterBar;
 
-        float barCenter = getBarCenter();
+        float barCenter = getBarCenter() + 10.0f;
 
         float halfBarHeight = barHeight / 2;
         float top = barCenter - halfBarHeight;

@@ -10,5 +10,10 @@
     <color name="green">#008000</color>
     <color name="blue">#0000FF</color>
     <color name="navy">#354361</color>
+    <color name="colorPrimary">#212121</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FF4081</color>
     <color name="black">#000000</color>
+    <color name="light_grey">#AAAAAA</color>
+    <color name="dark_grey">#555555</color>
 </resources>
